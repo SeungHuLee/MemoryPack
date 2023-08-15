@@ -1,3 +1,26 @@
+# This is my forked version of MemoryPack.
+This fork is just for fun. So It is very, very experimental. Will do following:
+- Bump to NET 8
+- Use it with my fork of MagicOnion
+
+# .NET 8 Benchmarks
+BenchmarkDotNet v0.13.7, Windows 11 (10.0.22621.2134/22H2/2022Update/SunValley2)
+13th Gen Intel Core i9-13900K, 1 CPU, 32 logical and 24 physical cores
+.NET SDK 8.0.100-preview.7.23376.3
+  [Host]     : .NET 8.0.0 (8.0.23.37506), X64 RyuJIT AVX2
+  Job-GWIZRS : .NET 8.0.0 (8.0.23.37506), X64 RyuJIT AVX2
+
+BenchmarkDotNet Version="0.13.7"
+K4os.Compression.LZ4 Version="1.3.5"
+K4os.Compression.LZ4.Streams Version="1.3.5"
+MessagePack Version="2.5.124"
+MessagePackAnalyzer Version="2.5.124"
+Microsoft.Orleans.CodeGenerator Version="7.2.1"
+Microsoft.Orleans.Serialization Version="7.2.1"
+protobuf-net Version="3.2.26"
+System.Text.Json Version="8.0.0-preview.7.23375.6"
+
+
 # MemoryPack
 
 [![NuGet](https://img.shields.io/nuget/v/MemoryPack.svg)](https://www.nuget.org/packages/MemoryPack)

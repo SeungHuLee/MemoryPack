@@ -72,13 +72,13 @@ var config = ManualConfig.CreateMinimumViable()
 
 //BenchmarkRunner.Run<VersionTolerant>(config, args);
 
-BenchmarkRunner.Run(typeof(JilBenchmark<>), config, args);
+//BenchmarkRunner.Run(typeof(JilBenchmark<>), config, args);
 
-//BenchmarkSwitcher.FromTypes(new[]{
-//    typeof(SerializeTest<>),
-//    typeof(DeserializeTest<>),
-//})
-//    .RunAllJoined(config);
+BenchmarkSwitcher.FromTypes(new[]{
+    typeof(SerializeTest<>),
+    typeof(DeserializeTest<>),
+})
+    .RunAllJoined(config);
 
 #endif
 

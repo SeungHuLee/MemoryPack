@@ -41,9 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "sandbox\Cla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeAot", "sandbox\NativeAot\NativeAot.csproj", "{6E18AECF-34B2-48F9-9694-54150FB156EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6VsNet7", "sandbox\Net6VsNet7\Net6VsNet7.csproj", "{5612B811-586A-4EB3-9AE7-60CAD4969A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net7Net8", "sandbox\Net6VsNet7\Net7Net8.csproj", "{5612B811-586A-4EB3-9AE7-60CAD4969A1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryPack.UnityShims", "src\MemoryPack.UnityShims\MemoryPack.UnityShims.csproj", "{9339C66C-25E5-4130-A213-9BA1804AD562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryPack.UnityShims", "src\MemoryPack.UnityShims\MemoryPack.UnityShims.csproj", "{9339C66C-25E5-4130-A213-9BA1804AD562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

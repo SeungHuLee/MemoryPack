@@ -14,25 +14,25 @@ var config = ManualConfig.CreateMinimumViable()
     // .AddColumn(StatisticColumn.OperationsPerSecond)
     //.AddExporter(DefaultExporters.Plain)
     .AddExporter(MarkdownExporter.Default)
-    .AddJob(Job.Default.WithWarmupCount(1).WithIterationCount(1).WithRuntime(CoreRuntime.Core60))
-    .AddJob(Job.Default.WithWarmupCount(1).WithIterationCount(1).WithRuntime(CoreRuntime.Core70));
+    .AddJob(Job.Default.WithWarmupCount(1).WithIterationCount(1).WithRuntime(CoreRuntime.Core70))
+    .AddJob(Job.Default.WithWarmupCount(1).WithIterationCount(1).WithRuntime(CoreRuntime.Core80));
 
 #if DEBUG
 
 #else
-BenchmarkSwitcher.FromTypes(new[] { typeof(Net6Net7<>) }).RunAllJoined(config);
+BenchmarkSwitcher.FromTypes(new[] { typeof(Net7Net8<>) }).RunAllJoined(config);
 #endif
 
 [GenericTypeArguments(typeof(Sample))]
 // [GenericTypeArguments(typeof(Sample2))]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByMethod)]
-public class Net6Net7<T>
+public class Net7Net8<T>
     where T : class, new()
 {
     private T s;
     byte[] bin;
 
-    public Net6Net7()
+    public Net7Net8()
     {
         s = new();
         bin = MemoryPackSerializer.Serialize(s);
