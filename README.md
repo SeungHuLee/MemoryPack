@@ -1,9 +1,9 @@
 # This is my forked version of MemoryPack.
 This fork is just for fun. So It is very, very experimental. Will do following:
-- Bump to NET 8
+- Bump to NET 8 and apply possible improvements (IUtf8SpanFormattable, Unsafe.BitCast, etc)
 - Use it with my fork of MagicOnion
 
-# .NET 8 Benchmarks
+# .NET 8 Benchmarks (8.0.100-preview.7.23376.3)
 BenchmarkDotNet v0.13.7, Windows 11 (10.0.22621.2134/22H2/2022Update/SunValley2)
 13th Gen Intel Core i9-13900K, 1 CPU, 32 logical and 24 physical cores
 .NET SDK 8.0.100-preview.7.23376.3
@@ -19,6 +19,35 @@ Microsoft.Orleans.CodeGenerator Version="7.2.1"
 Microsoft.Orleans.Serialization Version="7.2.1"
 protobuf-net Version="3.2.26"
 System.Text.Json Version="8.0.0-preview.7.23375.6"
+
+## UTF8 vs UTF16 (MemoryPack , w/o IUtf8SpanFormattable) 
+                     Method |     Mean | Error | Payload |   Gen0 | Allocated |
+--------------------------- |---------:|------:|--------:|-------:|----------:|
+        SerializeUtf16Ascii | 28.90 ns |    NA |    76 B | 0.0162 |     104 B |
+     SerializeUtf16Japanese | 28.36 ns |    NA |    96 B | 0.0187 |     120 B |
+         SerializeUtf8Ascii | 31.19 ns |    NA |    44 B | 0.0112 |      72 B |
+      SerializeUtf8Japanese | 67.56 ns |    NA |   146 B | 0.0273 |     176 B |
+   SerializeUtf16LargeAscii | 68.63 ns |    NA | 1.18 KB | 0.1917 |    1232 B |
+    SerializeUtf8LargeAscii | 56.58 ns |    NA |   608 B | 0.0983 |     632 B |
+      DeserializeUtf16Ascii | 19.20 ns |    NA |       - | 0.0149 |      96 B |
+   DeserializeUtf16Japanese | 19.82 ns |    NA |       - | 0.0187 |     120 B |
+       DeserializeUtf8Ascii | 19.43 ns |    NA |       - | 0.0149 |      96 B |
+    DeserializeUtf8Japanese | 67.76 ns |    NA |       - | 0.0186 |     120 B |
+ DeserializeUtf16LargeAscii | 62.26 ns |    NA |       - | 0.1905 |    1224 B |
+  DeserializeUtf8LargeAscii | 53.85 ns |    NA |       - | 0.1905 |    1224 B |
+
+## Vector3[]
+
+```csharp
+public struct Vector3
+{
+    public float X;
+    public float Y;
+    public float Z;
+}
+```
+
+
 
 
 # MemoryPack
