@@ -15,10 +15,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="ConsoleAppFramework" Version="4.2.3" />
+        <PackageReference Include="ConsoleAppFramework" Version="4.2.4" />
         <PackageReference Include="MessagePack" Version="2.4.35" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-        <PackageReference Include="System.IO.Pipelines" Version="6.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="System.IO.Pipelines" Version="8.0.0-preview.7.23375.6" />
     </ItemGroup>
 
     <!-- output memoerypack serialization info to directory -->

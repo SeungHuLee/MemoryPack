@@ -107,10 +107,12 @@ internal sealed class ReusableReadOnlySequenceBuilder
     {
 #if NET7_0_OR_GREATER
         var span = CollectionsMarshal.AsSpan(list);
+        foreach (ref var item in span)
 #else
         var span = list;
-#endif
         foreach (var item in span)
+#endif
+
         {
             item.Reset();
             segmentPool.Push(item);
