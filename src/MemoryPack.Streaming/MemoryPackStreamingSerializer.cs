@@ -154,6 +154,7 @@ public static class MemoryPackStreamingSerializer
 
                     if (readResult.IsCanceled)
                     {
+                        await pipeReader.CompleteAsync().ConfigureAwait(false);
                         yield break;
                     }
 
